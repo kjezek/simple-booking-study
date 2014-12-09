@@ -98,24 +98,24 @@
                     </execution>
                 </executions>
             </plugin>
-        <!--<plugin>-->
-            <!--<groupId>cz.slezacek.ccp3</groupId>-->
-            <!--<artifactId>compatibility-checking-plugin</artifactId>-->
-            <!--<version>0.0.1</version>-->
-            <!--<executions>-->
-                <!--<execution>-->
-                    <!--<goals>-->
-                        <!--<goal>check</goal>-->
-                    <!--</goals>-->
-                <!--</execution>-->
-            <!--</executions>-->
-            <!--<configuration>-->
-            <!--</configuration>-->
-        <!--</plugin>-->
-	    
+            <plugin>
+                <artifactId>api-inter-compatibility-checker-maven-plugin</artifactId>
+                <groupId>cz.zcu.kiv.apicc</groupId>
+                <version>1.0.2-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
-
 
 
     <distributionManagement>
@@ -139,7 +139,6 @@
             <url>http://relisa-dev.kiv.zcu.cz/nexus/content/groups/public/</url>
         </repository>
     </repositories>
-
 
 
 </project>
