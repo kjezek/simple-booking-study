@@ -101,7 +101,7 @@
             <plugin>
                 <artifactId>api-inter-compatibility-checker-maven-plugin</artifactId>
                 <groupId>cz.zcu.kiv.apicc</groupId>
-                <version>1.0.2-SNAPSHOT</version>
+                <version>1.0.2</version>
                 <executions>
                     <execution>
                         <phase>test</phase>
