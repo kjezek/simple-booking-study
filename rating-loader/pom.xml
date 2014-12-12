@@ -32,28 +32,4 @@
      </build>
 
 
-    <distributionManagement>
-        <repository>
-            <id>relisa-release</id>
-            <name>Internal Releases</name>
-            <url>http://relisa-dev.kiv.zcu.cz/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>relisa-snapshots</id>
-            <name>Internal Snapshots</name>
-            <url>http://relisa-dev.kiv.zcu.cz/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>relisa-global</id>
-            <name>Global Proxy</name>
-            <url>http://relisa-dev.kiv.zcu.cz/nexus/content/groups/public/</url>
-        </repository>
-    </repositories>
-
-
-
 </project>
