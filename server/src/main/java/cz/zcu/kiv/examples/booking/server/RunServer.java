@@ -1,19 +1,21 @@
 package cz.zcu.kiv.examples.booking.server;
 
-import static spark.Spark.*;
-
 import com.google.gson.Gson;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import cz.zcu.kiv.examples.booking.preferences.RatingLoader;
 import cz.zcu.kiv.examples.booking.server.service.HotelsService;
 import cz.zcu.kiv.examples.booking.server.service.RoomService;
-import spark.*;
+import spark.Request;
+import spark.Response;
+import spark.Route;
 import spark.template.freemarker.FreeMarkerRoute;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import static spark.Spark.get;
 
 
 /**

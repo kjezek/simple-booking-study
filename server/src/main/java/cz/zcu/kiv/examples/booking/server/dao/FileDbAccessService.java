@@ -3,6 +3,7 @@ package cz.zcu.kiv.examples.booking.server.dao;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedList;
@@ -19,19 +20,25 @@ public class FileDbAccessService implements DbAccessService {
 
         List<String[]> list = new LinkedList<>();
 
-        InputStream stream  = getClass().getResourceAsStream(table);
+        InputStream stream = null;
 
         LineIterator it;
         try {
+//        stream  = getClass().getResourceAsStream(table);
+            stream = new FileInputStream("/home/kamilos/projects/simple-booking-study/server/src/main/resources/" + table);
             it = IOUtils.lineIterator(stream, "UTF-8");
+
+            while (it.hasNext()) {
+                String[] data = String.valueOf(it.next()).split(",");
+                list.add(data);
+            }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } finally {
+            IOUtils.closeQuietly(stream);
         }
 
-        while (it.hasNext()) {
-            String[] data = String.valueOf(it.next()).split(",");
-            list.add(data);
-        }
 
         return list;
     }

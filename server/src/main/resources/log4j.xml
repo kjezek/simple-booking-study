@@ -16,9 +16,16 @@
 		</layout>
 	</appender>
 
-	<root>
-		<level value="info" />
-		<appender-ref ref="fileAppender"/>
-	</root>
+    <logger name="cz.zcu.kiv" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="detailedConsoleAppender"/>
+        <appender-ref ref="detailedLogFileAppender"/>
+    </logger>
+
+    <root>
+        <level value="info" />
+        <appender-ref ref="detailedConsoleAppender"/>
+        <appender-ref ref="detailedLogFileAppender"/>
+    </root>
 
 </log4j:configuration>

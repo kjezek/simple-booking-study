@@ -1,0 +1,2 @@
+freemarker
+org.apache.log4j.net
