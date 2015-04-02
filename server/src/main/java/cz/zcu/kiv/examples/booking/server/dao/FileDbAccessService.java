@@ -19,14 +19,13 @@ public class FileDbAccessService implements DbAccessService {
     public List<String[]> readData(String table) {
 
         List<String[]> list = new LinkedList<>();
-
         InputStream stream = null;
 
-        LineIterator it;
         try {
 //        stream  = getClass().getResourceAsStream(table);
             stream = new FileInputStream("/home/kamilos/projects/simple-booking-study/server/src/main/resources/" + table);
-            it = IOUtils.lineIterator(stream, "UTF-8");
+            LineIterator it = new ServerFileIterator(stream);
+//            it = IOUtils.lineIterator(stream, "UTF-8");
 
             while (it.hasNext()) {
                 String[] data = String.valueOf(it.next()).split(",");

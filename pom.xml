@@ -67,10 +67,16 @@
                 </executions>
                 <configuration>
                     <classFilterList>
-                        <path>filterlist.txt</path>
+                        <path>jacc-blacklist.txt</path>
                         <whiteList>false</whiteList>
                     </classFilterList>
                 </configuration>
+                <!--<configuration>-->
+                    <!--<classFilterList>-->
+                        <!--<path>whitelist.txt</path>-->
+                        <!--<whiteList>true</whiteList>-->
+                    <!--</classFilterList>-->
+                <!--</configuration>-->
             </plugin>
 
             <!--<plugin>-->

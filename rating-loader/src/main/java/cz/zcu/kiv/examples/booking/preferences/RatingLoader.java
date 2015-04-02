@@ -1,6 +1,5 @@
 package cz.zcu.kiv.examples.booking.preferences;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 
 import java.io.IOException;
@@ -22,8 +21,9 @@ public class RatingLoader {
 
         String fileName = "/rating.csv";
         InputStream stream  = getClass().getResourceAsStream(fileName);
+        LineIterator it = new RatingFileIterator(stream);
 
-        LineIterator it = IOUtils.lineIterator(stream, "UTF-8");
+//        LineIterator it = IOUtils.lineIterator(stream, "UTF-8");
 
         while (it.hasNext()) {
             String[] data = it.next().split(",");

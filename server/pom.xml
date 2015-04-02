@@ -88,12 +88,12 @@
                         <!--</goals>-->
                     <!--</execution>-->
                 <!--</executions>-->
-                <!--<configuration>-->
+                <!--&lt;!&ndash; configuration>-->
                     <!--<classFilterList>-->
-                        <!--<path>../filterlist.txt</path>-->
+                        <!--<path>jacc-blacklist.txt</path>-->
                         <!--<whiteList>false</whiteList>-->
                     <!--</classFilterList>-->
-                <!--</configuration>-->
+                <!--</configuration &ndash;&gt;-->
             <!--</plugin>-->
         </plugins>
     </build>
