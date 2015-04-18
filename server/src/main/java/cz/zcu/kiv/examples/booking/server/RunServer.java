@@ -6,12 +6,16 @@ import com.google.inject.Injector;
 import cz.zcu.kiv.examples.booking.preferences.RatingLoader;
 import cz.zcu.kiv.examples.booking.server.service.HotelsService;
 import cz.zcu.kiv.examples.booking.server.service.RoomService;
+import org.apache.commons.io.IOUtils;
 import spark.Request;
 import spark.Response;
 import spark.Route;
 import spark.template.freemarker.FreeMarkerRoute;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,6 +66,34 @@ public class RunServer {
             public Object handle(Request request, Response response) {
                 Integer id = Integer.parseInt(request.params("id"));
                 return new Gson().toJson(roomService.getRooms(id));
+            }
+        });
+
+        get(new Route("/jquery.js") {
+            @Override
+            public Object handle(Request request, Response response) {
+                try {
+                    return IOUtils.toString(getClass().getResourceAsStream("/jquery-1.10.1.min.js"));
+                } catch (IOException e) {
+                    return null;
+                }
+            }
+        });
+
+        get(new Route("/img/*") {
+            @Override
+            public Object handle(Request request, Response response) {
+                try {
+                    String path = request.pathInfo();
+                    InputStream inputStream = getClass().getResourceAsStream(path);
+                    OutputStream outputStream = response.raw().getOutputStream();
+                    IOUtils.copy(inputStream, outputStream);
+                    response.status(HttpServletResponse.SC_OK);
+                    response.header("Content-Type", "image/png");
+                    return "ok";
+                } catch (IOException e) {
+                    return null;
+                }
             }
         });
     }
