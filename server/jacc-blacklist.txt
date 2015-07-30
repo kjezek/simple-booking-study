@@ -1,0 +1,16 @@
+com.google.inject.internal.cglib.core
+freemarker.ext.jdom
+freemarker.ext.jsp
+org.apache.log4j.net
+org.apache.log4j.or.jms
+freemarker.log
+freemarker.ext.ant
+freemarker.ext.dom
+freemarker.ext.xml
+org.eclipse.jetty.server.handler.jmx
+org.eclipse.jetty.server.jmx
+freemarker.ext.rhino
+freemarker.ext.jython
+freemarker.template.utility
+freemarker.ext.beans
+
