@@ -20,10 +20,30 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+            <!--<plugin>-->
+            <!--<artifactId>api-inter-compatibility-checker-maven-plugin</artifactId>-->
+            <!--<groupId>cz.zcu.kiv.apicc</groupId>-->
+            <!--<version>1.0.5</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<phase>test</phase>-->
+            <!--<goals>-->
+            <!--<goal>check</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--<configuration>-->
+            <!--<classFilterList>-->
+            <!--<path>jacc-blacklist.txt</path>-->
+            <!--<whiteList>false</whiteList>-->
+            <!--</classFilterList>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+
             <plugin>
-                <artifactId>api-inter-compatibility-checker-maven-plugin</artifactId>
-                <groupId>cz.zcu.kiv.apicc</groupId>
-                <version>1.0.5</version>
+                <artifactId>verifa-conformance-maven-plugin</artifactId>
+                <groupId>com.verifa.checker</groupId>
+                <version>1.0.0</version>
                 <executions>
                     <execution>
                         <phase>test</phase>
@@ -33,26 +53,27 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <classFilterList>
-                        <path>jacc-blacklist.txt</path>
-                        <whiteList>false</whiteList>
-                    </classFilterList>
+                    <blackList>jacc-blacklist.txt</blackList>
+                    <scopes>
+                        <scope>compile</scope>
+                        <scope>runtime</scope>
+                        <scope>provided</scope>
+                        <scope>system</scope>
+                    </scopes>
+                    <extraFilesDirs>
+                        <extraFilesDir>/home/kamilos/apache-tomcat-7.0.61/lib/</extraFilesDir>
+                    </extraFilesDirs>
+                    <format>html</format>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
     <pluginRepositories>
         <pluginRepository>
-            <id>relisa-global-private</id>
+            <id>verifa-global</id>
             <name>Internal Releases</name>
-            <url>http://relisa-dev.kiv.zcu.cz/nexus/content/groups/private/</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>relisa-global</id>
-            <name>Global Proxy</name>
-            <url>http://relisa-dev.kiv.zcu.cz/nexus/content/groups/public/</url>
+            <url>http://verifalabs-dev/nexus/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
 

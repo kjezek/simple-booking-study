@@ -13,4 +13,4 @@ freemarker.ext.rhino
 freemarker.ext.jython
 freemarker.template.utility
 freemarker.ext.beans
-
+com.google.inject.internal.util.$CustomConcurrentHashMap$Impl
