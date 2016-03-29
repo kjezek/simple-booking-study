@@ -43,7 +43,7 @@
             <plugin>
                 <artifactId>verifa-conformance-maven-plugin</artifactId>
                 <groupId>com.verifa.checker</groupId>
-                <version>1.0.0</version>
+                <version>1.0.1-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <phase>test</phase>
@@ -63,7 +63,7 @@
                     <extraFilesDirs>
                         <extraFilesDir>/home/kamilos/apache-tomcat-7.0.61/lib/</extraFilesDir>
                     </extraFilesDirs>
-                    <format>html</format>
+                    <format>txt</format>
                 </configuration>
             </plugin>
         </plugins>
@@ -80,5 +80,6 @@
     <modules>
         <module>rating-loader</module>
         <module>server</module>
+        <module>bookings-loader</module>
     </modules>
 </project>
