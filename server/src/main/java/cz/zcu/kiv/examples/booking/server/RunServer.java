@@ -3,6 +3,7 @@ package cz.zcu.kiv.examples.booking.server;
 import com.google.gson.Gson;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import cz.zcu.kiv.examples.booking.preferences.FileRatingLoader;
 import cz.zcu.kiv.examples.booking.preferences.RatingLoader;
 import cz.zcu.kiv.examples.booking.server.service.HotelsService;
 import cz.zcu.kiv.examples.booking.server.service.RoomService;
@@ -52,7 +53,7 @@ public class RunServer {
             @Override
             public Object handle(Request request, Response response) {
 
-                RatingLoader rating = new RatingLoader();
+                RatingLoader rating = new FileRatingLoader();
                 try {
                     return new Gson().toJson(rating.load());
                 } catch (IOException e) {

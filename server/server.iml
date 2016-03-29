@@ -26,7 +26,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: log4j:log4j:1.2.16" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.4" level="project" />
-    <orderEntry type="library" name="Maven: cz.zcu.kiv.examples.booking:rating-loader:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="rating-loader" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.inject:guice:3.0" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
