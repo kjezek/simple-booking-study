@@ -23,7 +23,7 @@
             <!--<plugin>-->
             <!--<artifactId>api-inter-compatibility-checker-maven-plugin</artifactId>-->
             <!--<groupId>cz.zcu.kiv.apicc</groupId>-->
-            <!--<version>1.0.5</version>-->
+            <!--<version>1.0.6</version>-->
             <!--<executions>-->
             <!--<execution>-->
             <!--<phase>test</phase>-->
@@ -37,6 +37,10 @@
             <!--<path>jacc-blacklist.txt</path>-->
             <!--<whiteList>false</whiteList>-->
             <!--</classFilterList>-->
+            <!--<scopes>-->
+            <!--<scope>compile</scope>-->
+            <!--<scope>runtime</scope>-->
+            <!--</scopes>-->
             <!--</configuration>-->
             <!--</plugin>-->
 
@@ -63,7 +67,7 @@
                     <extraFilesDirs>
                         <extraFilesDir>/home/kamilos/apache-tomcat-7.0.61/lib/</extraFilesDir>
                     </extraFilesDirs>
-                    <format>txt</format>
+                    <format>html</format>
                 </configuration>
             </plugin>
         </plugins>
@@ -76,6 +80,20 @@
             <url>http://verifalabs-dev/nexus/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <!--<pluginRepositories>-->
+    <!--<pluginRepository>-->
+    <!--<id>relisa-global-private</id>-->
+    <!--<name>Internal Releases</name>-->
+    <!--<url>http://relisa-dev.kiv.zcu.cz/nexus/content/groups/private/</url>-->
+    <!--</pluginRepository>-->
+    <!--<pluginRepository>-->
+    <!--<id>relisa-global</id>-->
+    <!--<name>Global Proxy</name>-->
+    <!--<url>http://relisa-dev.kiv.zcu.cz/nexus/content/groups/public/</url>-->
+    <!--</pluginRepository>-->
+    <!--</pluginRepositories>-->
+
 
     <modules>
         <module>rating-loader</module>
