@@ -47,7 +47,7 @@
             <plugin>
                 <artifactId>verifa-conformance-maven-plugin</artifactId>
                 <groupId>com.verifa.checker</groupId>
-                <version>1.0.1-SNAPSHOT</version>
+                <version>1.0.2-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <phase>test</phase>
@@ -57,7 +57,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <blackList>jacc-blacklist.txt</blackList>
+                    <!--<blackList>jacc-blacklist.txt</blackList>-->
                     <scopes>
                         <scope>compile</scope>
                         <scope>runtime</scope>
@@ -67,7 +67,8 @@
                     <extraFilesDirs>
                         <extraFilesDir>/home/kamilos/apache-tomcat-7.0.61/lib/</extraFilesDir>
                     </extraFilesDirs>
-                    <format>html</format>
+                    <format>txt</format>
+                    <skipFlow>false</skipFlow>
                 </configuration>
             </plugin>
         </plugins>
